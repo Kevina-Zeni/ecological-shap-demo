@@ -25,9 +25,30 @@ The dataset contains four environmental variables:
 **Soil Nitrogen (10–80 mg/kg)**: Nitrogen increases growth mainly when soil moisture is above 20%.
 **Canopy Cover (0–100%)**: More canopy cover has a positive effect on biomass.
 
-
 ## Requirements
 Python
+
+## Results
+
+The XGBoost model was able to recover the ecological patterns that were intentionally built into the simulated data.
+
+### Temperature threshold
+
+The SHAP temperature plot shows that temperature contributes positively to predicted biomass at lower temperatures, but its contribution becomes increasingly negative above approximately 30°C.
+
+This reflects the thermal threshold that was built into the simulation.
+
+### Soil moisture × nitrogen interaction
+
+The SHAP interaction analysis showed that the strongest pairwise interaction was between soil moisture and soil nitrogen, with a mean absolute interaction value of approximately 0.45.
+
+This is consistent with the simulated relationship where nitrogen contributes to biomass mainly when soil moisture is above 20%.
+
+### Interpretation
+
+These results demonstrate how an interpretable machine learning workflow can recover nonlinear relationships and interactions from environmental data.
+
+However, these are not new ecological discoveries because the relationships were deliberately defined when the simulated data was created. With real ecological data, similar model patterns could be used to generate ecological hypotheses for further investigation.
 
 
 
